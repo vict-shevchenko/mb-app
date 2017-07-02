@@ -1,0 +1,37 @@
+.app {
+	height: 100%;
+	min-height: 100%;
+	background: linear-gradient(180deg, $theme-bg-darken, $theme-bg-lighten);
+}
+
+.app-container {
+	position: relative;
+	min-height: 100%;
+}
+
+.app__header {
+	height: 60px;
+	padding-top: 5px;
+}
+
+.app__main {
+	display: flex;
+}
+
+.app__navigation {
+	flex: 0 0 230px;
+}
+
+.app__content {
+	flex: 1 1 auto;
+}
+
+.app__empty {
+	margin-top: -60px;
+}
+
+.app__footer {
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+}
