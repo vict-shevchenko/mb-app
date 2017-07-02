@@ -5,7 +5,8 @@ export default function Navigation() {
 	return (
 		<div>
 			<Link className="nav-item" to="/sms">Send Message</Link>
-			<Link className="nav-item" to="/messages">Messages</Link>
+			<Link className="nav-item" to="/messages">Messages</Link>			
+			<Link className="nav-item" to="/access">Access</Link>
 		</div>
 	)
 }
