@@ -7,13 +7,41 @@
 
 @import "components/app";
 @import "components/navigation";
+@import "components/form";
+@import "components/button";
 
+// @include font-face("Montserrat", "https://fonts.googleapis.com/css?family=Montserrat");
 
 html, body, #root {
 	@include size(100%);
+	color: $theme-main-text;
+}
+
+body, input, textarea, button {
+	font-family: 'Montserrat',sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 
 * {
 	box-sizing: border-box;
 }
 
+h1 {
+	margin-bottom: 30px;
+	line-height: 30px;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.panel-container {
+	background: #fff;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0 3px 6px rgba(36,129,215,0.05), 0 2px 3px rgba(36,129,215,0.04);
+	position: relative;
+}
