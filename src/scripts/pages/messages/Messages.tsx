@@ -44,8 +44,27 @@ function Message({id, direction, recipients, originator, body, createdDatetime}:
 }
 
 class Messages extends React.Component<iProps, any> {
+	ws: WebSocket;
+
 	componentDidMount() {
 		this.props.messagesStore.getMessages();
+
+		this.ws = new WebSocket("wss://blooming-woodland-27725.herokuapp.com/");
+
+		this.ws.onmessage = (event) => {
+			const message = JSON.parse(event.data);
+
+			if (message.type === 'MESSAGE_RECEIVED') {
+				console.log('New messsage received');
+				this.props.messagesStore.pushMessage(message.content);
+			} else {
+				console.log('Data received from WS stream ', event.data);
+			}
+		}
+	}
+
+	componentWillUnmount() {
+		this.ws.close();
 	}
 
 	render() {

@@ -12,4 +12,21 @@ export class MessagesStore {
 		return getMessages()
 			.then(messages => this.messages = messages.items)
 	}
+
+	@action pushMessage({id, recipient, originator, body, createdDatetime}) {
+		this.messages.push({
+			id,
+			recipients: {
+				items:[
+					{
+						recipient,
+						status: 'delivered'
+					}
+				]
+			},
+			originator,
+			body,
+			createdDatetime
+		})
+	}
 }
