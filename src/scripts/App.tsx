@@ -38,7 +38,7 @@ class App extends React.Component<any, undefined> {
 		return (
 			<div className="app">
 				<div className="app-container">
-					<div className="app__header">header</div>
+					<div className="app__header">Frontend Engineer Interview Assignment by Viktor Shevchenko</div>
 					<div className="app__main">
 						<div className="app__navigation">
 							<Navigation />
@@ -48,7 +48,7 @@ class App extends React.Component<any, undefined> {
 					<div className="app__empty"></div>
 				</div>
 
-				<div className="app__footer">footer</div>
+				<div className="app__footer">MessageBird</div>
 			</div>
 		)
 	}

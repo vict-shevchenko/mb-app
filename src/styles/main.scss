@@ -14,15 +14,23 @@
 
 // @include font-face("Montserrat", "https://fonts.googleapis.com/css?family=Montserrat");
 
-html, body, #root {
-	@include size(100%);
+body {
 	color: $theme-main-text;
 }
 
+html, body, #root {
+	@include size(100%);
+}
+
 body, input, textarea, button {
+	font-size: 14px;
 	font-family: 'Montserrat',sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea {
+	font-size: 14px;
 }
 
 * {

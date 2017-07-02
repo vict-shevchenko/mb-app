@@ -1,3 +1,17 @@
-.nav-item {
+.navigation {
+	padding-top: 40px;
+}
+
+.navigation__item {
 	display: block;
+	height: 40px;
+	padding: 8px 20px;
+	font-size: 16px;
+	color: $theme-main-text;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+		color: $theme-primary-lighten;
+	}
 }
