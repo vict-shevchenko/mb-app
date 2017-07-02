@@ -1,0 +1,55 @@
+@import "~bourbon/app/assets/stylesheets/_bourbon";
+
+@import "_variables";
+
+@import "_normalize";
+@import "_grid";
+
+@import "components/app";
+@import "components/navigation";
+
+
+html, body, #root, .site {
+	@include size(100%);
+}
+
+input, textarea {
+	box-sizing: border-box;
+}
+
+$grey: #ccc;
+$green: forestgreen;
+
+.site {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: 100px 1fr 100px;
+	grid-template-areas:
+		"header header"
+		"navigation content"
+		"footer footer";
+
+	&__header {
+		grid-area: header;
+		border-bottom: 1px solid $grey;
+	}
+
+	&__footer {
+		grid-area: footer;
+		border-top: 1px solid $grey;
+	}
+
+	&__navigation {
+		grid-area: navigation;
+		border-right: 1px solid $grey;
+		overflow-y: auto;
+	}
+
+	&__content {
+		grid-area: content;
+		overflow-y: auto;
+	}
+}
+
+
+
