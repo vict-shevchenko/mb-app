@@ -1,0 +1,1 @@
+export const REST_API_HOST = 'https://rest.messagebird.com';

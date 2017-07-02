@@ -1,14 +1,23 @@
 import * as React from 'react';
+import { inject, observer } from 'mobx-react';
 import SendSMSForm from './SendSMSForm';
+import { MessagesStore } from "../../store/MessagesStore";
+import { RouteComponentProps } from "react-router-dom";
 
-export default function SendSMS() {
+interface iProps extends RouteComponentProps<any> {
+	messagesStore: MessagesStore,
+}
+
+
+function SendSMS(props: iProps) {
 	function handleSubmit(form) {
-		const params = {
+		const message = {
 			originator: form.originator,
 			body: form.body,
 			recipients: [form.recepient]
 		}
-		debugger;
+		
+		return props.messagesStore.sendSMS(message);
 	}
 
 	return (
@@ -21,3 +30,5 @@ export default function SendSMS() {
 		</div>
 	)
 }
+
+export default inject('messagesStore')(observer(SendSMS))

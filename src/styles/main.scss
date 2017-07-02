@@ -5,10 +5,12 @@
 @import "_normalize";
 @import "_grid";
 
-@import "components/app";
+
 @import "components/navigation";
 @import "components/form";
 @import "components/button";
+@import "components/app";
+@import "components/messages";
 
 // @include font-face("Montserrat", "https://fonts.googleapis.com/css?family=Montserrat");
 

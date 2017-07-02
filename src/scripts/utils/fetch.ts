@@ -5,10 +5,12 @@
  * */
 
 // Default request parameters
-export const fetchDefaults = {
+export const fetchDefaults: RequestInit = {
 	credentials: 'same-origin', // used for preserving cookie
 	method     : 'GET',
-	headers    : {}
+	headers    : {
+		'Content-Type': 'application/json'
+	}
 };
 
 /**
@@ -56,9 +58,11 @@ export function parseJSON(response) {
 export function doFetchCall(url, parameters = {}) {
 	const fetchParameters = Object.assign({}, fetchDefaults, parameters);
 
-	// Object.assign(fetchParameters.headers, { Authorization: `Bearer ${localStorage.getItem('access_token')}` });
+	Object.assign(fetchParameters.headers, { Authorization: `AccessKey ${localStorage.getItem('ACCESS_KEY')}` });
 
-	return fetch(url/*, fetchParameters*/)
+	// debugger
+
+	return fetch(url, fetchParameters)
 		.then(checkStatus)
-		.then(parseText);
+		.then(parseJSON);
 }
