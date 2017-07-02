@@ -23,17 +23,20 @@ class Authorise extends React.Component<iAuthoriseProps, {}> {
 	}
 
 	render() {
+		const key = this.props.userStore.ACCESS_KEY;
+
 		return (
 			<div>
 				<h1>Update Your Authentification information</h1>
 				<div className="panel-container">
-					<h2>Your current API key - {this.props.userStore.ACCESS_KEY}</h2>
+					<p>Before you can start interact with a platform please set your <code>ACCESS_KEY</code> below</p>
+					<h2>Your current API key - {key}</h2>
 					<div className="row">
 						<div className="col-md-8">
-							<input type="text" ref={(input) => { this.apiKeyInput = input; }}/>
+							<input type="text" ref={(input) => { this.apiKeyInput = input; }} className="mb-form__text-input" placeholder="Your API Access Key"/>
 						</div>
 						<div className="col-md-4">
-							<button onClick={this.updateKey}>Update</button>
+							<button className="btn btn_primary btn_medium full-width" onClick={this.updateKey}>{ key ? 'Update' : 'Set'}</button>
 						</div>
 					</div>
 				</div>
