@@ -43,14 +43,19 @@ function Message({id, direction, recipients, originator, body, createdDatetime}:
 	)
 }
 
+// Component responsible for requestin/rendering a grid of user messages
 class Messages extends React.Component<iProps, any> {
 	ws: WebSocket;
 
+	// when component is mounted
 	componentDidMount() {
+		// request user messages
 		this.props.messagesStore.getMessages();
 
+		// initiate web socket connection
 		this.ws = new WebSocket("wss://blooming-woodland-27725.herokuapp.com/");
 
+		// logic for managing messages from web sockets
 		this.ws.onmessage = (event) => {
 			const message = JSON.parse(event.data);
 
@@ -63,6 +68,7 @@ class Messages extends React.Component<iProps, any> {
 		}
 	}
 
+	// close ws connection when component is unmounted
 	componentWillUnmount() {
 		this.ws.close();
 	}

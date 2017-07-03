@@ -41,6 +41,7 @@ In this project webpack config is extremely simple, as it is not a focus, but wh
 3. `npm install`
 4. `npm start` - for starting a development server
 5. `npm run build-prod` - to build for production
+6. access `/access` page, to add ypur API key. So interaction with API properly work.
 
 After you server is running
 1. go to `https://blooming-woodland-27725.herokuapp.com/` This is a simple server, that acceplts a `POST` request and sends a message via web sockets to client
