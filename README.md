@@ -34,6 +34,13 @@ In this project webpack config is extremely simple, as it is not a focus, but wh
 ### TSLing as a tool for code quality checking (this project does not have TSLink)
 
 
+### SCSS & Bourbon mixin library are used for styling
+1. SCSS is very powerfull
+2. It allows writing mixins of any complexity
+3. Backward compatible to css
+4. Note: 
+
+
 ## Running a project
 
 1. clone the repo
