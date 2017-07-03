@@ -3,10 +3,6 @@ import { inject, observer } from 'mobx-react';
 import { RouteComponentProps } from "react-router-dom";
 import { MessagesStore } from "../../store/MessagesStore";
 
-interface iProps extends RouteComponentProps<any> {
-	messagesStore: MessagesStore,
-}
-
 interface iRecepient {
 	recipient: number,
 	status: string
@@ -41,6 +37,10 @@ function Message({id, direction, recipients, originator, body, createdDatetime}:
 			<td>{dateTime.getHours()}:{dateTime.getMinutes()}</td>
 		</tr>
 	)
+}
+
+interface iProps extends RouteComponentProps<any> {
+	messagesStore: MessagesStore,
 }
 
 // Component responsible for requestin/rendering a grid of user messages
