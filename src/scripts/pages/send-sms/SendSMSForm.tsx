@@ -2,7 +2,7 @@ import * as React from 'react';
 import { reactiveMobxForm, Control } from 'reactive-mobx-form'; 
 import MBTextInput from "../../components/form/MBTextInput";
 
-
+// Component that renders a Send SMS form
 function SendSMSForm({submit}) {
 	return (
 		<form onSubmit={submit}>
@@ -31,6 +31,7 @@ function SendSMSForm({submit}) {
 	)
 }
 
+// wrapping component into a reactiveMobxForm, so it can interact with formStore
 export default reactiveMobxForm('sms', {
 	recepient: ['', 'required|numeric'],
 	originator: ['', 'required|numeric']

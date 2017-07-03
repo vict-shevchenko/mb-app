@@ -8,7 +8,7 @@ interface iProps extends RouteComponentProps<any> {
 	messagesStore: MessagesStore,
 }
 
-
+// Component for Send SMS page, havig a callback function, when form is submitted
 function SendSMS(props: iProps) {
 	function handleSubmit(form) {
 		const message = {

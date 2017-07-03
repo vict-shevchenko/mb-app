@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { inject, observer } from "mobx-react";
 import { UserStore } from "../../store/UserStore";
+import { RouteComponentProps } from "react-router-dom";
 
-interface iAuthoriseProps {
-	userStore: UserStore,
-	match: any,
-	location: any,
-	history: any
+interface iProps extends RouteComponentProps<any> {
+	userStore: UserStore
 }
 
-class Authorise extends React.Component<iAuthoriseProps, {}> {
+// Component that has a input field for ACCESS_KEY, and button to update it.
+// I have used a ref attribut on input here, as we don§t need to keep its data in component state and are intrested only in final value
+class Authorise extends React.Component<iProps, {}> {
 	apiKeyInput: HTMLInputElement;
 
 	constructor() {
@@ -18,6 +18,7 @@ class Authorise extends React.Component<iAuthoriseProps, {}> {
 		this.updateKey = this.updateKey.bind(this);
 	}
 
+	// update key in store (it will auomatically update in localStorege due to autorun function)
 	updateKey() {
 		this.props.userStore.setAccessKey(this.apiKeyInput.value);
 	}

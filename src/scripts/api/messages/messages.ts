@@ -1,3 +1,5 @@
+// Module for CRUD communication to /messages endpoint
+
 import { REST_API_HOST } from '../core';
 import { doFetchCall } from '../../utils/fetch';
 
