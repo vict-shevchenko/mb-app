@@ -53,7 +53,8 @@ class Messages extends React.Component<iProps, any> {
 		this.props.messagesStore.getMessages();
 
 		// initiate web socket connection
-		this.ws = new WebSocket("wss://blooming-woodland-27725.herokuapp.com/");
+		// this.ws = new WebSocket("ws://localhost:5000");
+		 this.ws = new WebSocket("wss://blooming-woodland-27725.herokuapp.com/");
 
 		// logic for managing messages from web sockets
 		this.ws.onmessage = (event) => {

@@ -23,7 +23,7 @@ In this project webpack config is extremely simple, as it is not a focus, but wh
 
 ### React-router as a routing library
 1. The most solid solution for usage with react
-2. Has a dinamic routing since v.4 *add*
+2. Has a dinamic routing since v.4 So Route is just a react component, that causes routing as app renderes.
 
 ### Jest as testing framework (this project does not have tests)
 1. Has everything, what can be needed for testing out of the box, like spy, asserts.
@@ -41,20 +41,36 @@ In this project webpack config is extremely simple, as it is not a focus, but wh
 4. Note: 
 
 
-## Running a project
+## Some Instructions
 
 1. clone the repo
 2. `npm install typescript -g`
 3. `npm install`
 4. `npm start` - for starting a development server
 5. `npm run build-prod` - to build for production
-6. access `/access` page, to add ypur API key. So interaction with API properly work.
+
+## Running a project
+1. `npm start`
+2. In Browser go to `localhost:8081` 
+3. access `/access` page, to add ypur API key. So interaction with API work properly.
+
 
 After you server is running
-1. go to `https://blooming-woodland-27725.herokuapp.com/` This is a simple server, that acceplts a `POST` request and sends a message via web sockets to client
+1. go to `https://blooming-woodland-27725.herokuapp.com/` This is a simple server, that acceplts a `POST` request(with payload) and sends a message via web sockets to client(with POST payload). To make sure its up.
 2. Using a tool like `postman` send a request to `https://blooming-woodland-27725.herokuapp.com/messages`
 3. New message should instantly appear in messages grid
 
-PS: When having a VMN, the url `https://blooming-woodland-27725.herokuapp.com/messages` shoul be set as a webhook and resending data from POST request to websokets implemented. Now POST request triggers a random messages to be send over web sockets. But a flow is already describable, I hope.
+Note  when sending a POST request to `https://blooming-woodland-27725.herokuapp.com/messages` pass `ContentType: application/json`.
+
+Payload Example:
+```
+{
+	"id": "e8077d803532c0b5937c639b60216938",
+	"recipient": 31642500190,
+	"originator": 31612345678,
+	"body": "This is an incoming message",
+	"createdDatetime": "2016-05-03T14:26:57+00:00"
+}
+```
 
 ## Add Docker ?
