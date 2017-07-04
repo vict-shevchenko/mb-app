@@ -13,7 +13,8 @@ module.exports = {
 			rewrites: [
 				{ from: /./, to: '/index.html' }
 			]
-		}
+		},
+		port: 9000
 	},
 	devtool: 'source-map',
 	resolve: {

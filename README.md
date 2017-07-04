@@ -51,7 +51,7 @@ In this project webpack config is extremely simple, as it is not a focus, but wh
 
 ## Running a project
 1. `npm start`
-2. In Browser go to `localhost:8081` 
+2. In Browser go to `localhost:9000` 
 3. access `/access` page, to add ypur API key. So interaction with API work properly.
 
 

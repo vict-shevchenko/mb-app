@@ -12,17 +12,20 @@ import { UserStore } from "./scripts/store/UserStore";
 import { MessagesStore } from "./scripts/store/MessagesStore";
 
 // creating a stores that should exist in application, if too many of them, this logic can be moved to separate module
-const formStore = new FormStore();
-const userStore = new UserStore();
-const messagesStore = new MessagesStore();
+const appStore = {
+	formStore: new FormStore(),
+	userStore: new UserStore(),
+	messagesStore: new MessagesStore(),
+}
+
 
 // whenever user changes his 'userStore.ACCESS_KEY' it will be updated in localSorage, so it can be stored on a client
 autorun(() => {
-	window.localStorage.setItem('ACCESS_KEY', userStore.ACCESS_KEY);
+	window.localStorage.setItem('ACCESS_KEY', appStore.userStore.ACCESS_KEY);
 })
 
 ReactDOM.render(
-	<Provider userStore={userStore} messagesStore={messagesStore} formStore={formStore}>
+	<Provider {...appStore}>
 		<BrowserRouter>
 			<App />
 		</BrowserRouter>

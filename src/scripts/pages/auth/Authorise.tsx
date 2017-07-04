@@ -25,6 +25,9 @@ class Authorise extends React.Component<iProps, {}> {
 
 	render() {
 		const key = this.props.userStore.ACCESS_KEY;
+		const keyValid = this.props.userStore.accessKeyValid;
+		const keyErrorMsg = this.props.userStore.accessKeyInvalidMessage;
+		const balance = this.props.userStore.balance;
 
 		return (
 			<div>
@@ -32,6 +35,9 @@ class Authorise extends React.Component<iProps, {}> {
 				<div className="panel-container">
 					<p>Before you can start interact with a platform please set your <code>ACCESS_KEY</code> below</p>
 					<h2>Your current API key - {key}</h2>
+					{!key ? <p className="error">Missing Access Key</p> : ''}
+					{key && !keyValid ? <p className="error">Access Key is invalid, {keyErrorMsg}</p> : ''}
+					{key && keyValid ? <p className="success">Access Key valid, your balance ${balance}</p> : ''}
 					<div className="row">
 						<div className="col-md-8">
 							<input type="text" ref={(input) => { this.apiKeyInput = input; }} className="mb-form__text-input" placeholder="Your API Access Key"/>

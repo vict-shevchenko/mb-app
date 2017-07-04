@@ -13,5 +13,10 @@
 	&:hover {
 		text-decoration: none;
 		color: $theme-primary-lighten;
+		cursor: pointer;
 	}
+}
+
+.navigation__item_selected {
+	color: $theme-link-active;
 }

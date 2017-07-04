@@ -9,7 +9,7 @@ interface iProps extends RouteComponentProps<any> {
 }
 
 // Component for Send SMS page, havig a callback function, when form is submitted
-function SendSMS(props: iProps) {
+function SendSMSPage(props: iProps) {
 	function handleSubmit(form) {
 		const message = {
 			originator: form.originator,
@@ -31,4 +31,4 @@ function SendSMS(props: iProps) {
 	)
 }
 
-export default inject('messagesStore')(observer(SendSMS))
+export default inject('messagesStore')(observer(SendSMSPage))
