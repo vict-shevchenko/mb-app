@@ -11,15 +11,11 @@ export class UserStore {
 
 	constructor() {
 		this.ACCESS_KEY = window.localStorage.getItem('ACCESS_KEY') || '';
-
-		this.ACCESS_KEY && this.checkKey();
 	}
 
 	// update key method
 	@action setAccessKey(key) {
 		this.ACCESS_KEY = key;
-
-		this.checkKey();
 	}
 
 	// Method to be used to check balance, also verify a API key

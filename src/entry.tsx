@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'; // used a hashRouting to better serf experience on gh-pages.
 import { autorun } from 'mobx';
 import { Provider } from 'mobx-react';
 
@@ -22,13 +22,15 @@ const appStore = {
 // whenever user changes his 'userStore.ACCESS_KEY' it will be updated in localSorage, so it can be stored on a client
 autorun(() => {
 	window.localStorage.setItem('ACCESS_KEY', appStore.userStore.ACCESS_KEY);
+
+	appStore.userStore.ACCESS_KEY && appStore.userStore.checkKey();
 })
 
 ReactDOM.render(
 	<Provider {...appStore}>
-		<BrowserRouter>
+		<HashRouter>
 			<App />
-		</BrowserRouter>
+		</HashRouter>
 	</Provider>,
 	document.getElementById('root')
 );

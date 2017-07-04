@@ -14,10 +14,9 @@ require('../styles/main.scss');
 function AuthorisedRouting() {
 	return (
 		<div className="app__content">
+			<Route path="/access" component={AuthorisePage} />
 			<Route path="/messages" component={MessagesPage} />
 			<Route path="/sms" component={SendSMSPage} />
-			<Route path="/access" component={AuthorisePage} />
-			<Redirect from="/" to="/messages" />
 		</div>
 	)
 }
