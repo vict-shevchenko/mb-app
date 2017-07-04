@@ -38,7 +38,8 @@ In this project webpack config is extremely simple, as it is not a focus, but wh
 1. SCSS is very powerfull
 2. It allows writing mixins of any complexity
 3. Backward compatible to css
-4. Note: 
+4. Note: I prefer keeping a `.scss` file in the same folder with a component it matchs, but due to [webpack bug](https://github.com/webpack/webpack/issues/215) and more visibility I have put all styles to a `styles` folder. 
+5. Note 2: writing CSS in JS gives more control over component styling and makes JSX code cleaner(no ternary operators). So in developemnt I`d prefer using solution like [Styles Components](https://github.com/styled-components/styled-components)
 
 
 ## Some Instructions
@@ -49,15 +50,22 @@ In this project webpack config is extremely simple, as it is not a focus, but wh
 4. `npm start` - for starting a development server
 5. `npm run build-prod` - to build for production
 
-## Running a project
-1. `npm start`
-2. In Browser go to `localhost:9000` 
-3. access `/access` page, to add ypur API key. So interaction with API work properly.
+## Running a project locally 
+1. clone the repo
+2. `npm start`
+3. In Browser go to `localhost:9000` 
+4. access `/access` page, to add ypur API key. So interaction with API work properly.
 
+## Test Send SMS
+After server is running
+1. Go to 'Send SMS' tab
+2. Fill in data and send messages
+3. Note: The response from REST endpoint is 200 OK, but as I see message is not sent(credits are not touched)
 
+## Test My Messages and instant message receive
 After you server is running
-1. go to `https://blooming-woodland-27725.herokuapp.com/` This is a simple server, that acceplts a `POST` request(with payload) and sends a message via web sockets to client(with POST payload). To make sure its up.
-2. Using a tool like `postman` send a request to `https://blooming-woodland-27725.herokuapp.com/messages`
+1. go to `https://blooming-woodland-27725.herokuapp.com/` to make sure its up. This is a simple server, that acceplts a `POST` request(with payload) and sends a message via web sockets to client(with same POST payload). 
+2. Using a tool like `postman` send a request to `https://blooming-woodland-27725.herokuapp.com/messages` include payload like in example
 3. New message should instantly appear in messages grid
 
 Note  when sending a POST request to `https://blooming-woodland-27725.herokuapp.com/messages` pass `ContentType: application/json`.
