@@ -22,6 +22,7 @@ export class UserStore {
 		this.checkKey();
 	}
 
+	// Method to be used to check balance, also verify a API key
 	checkKey() {
 		getBalance()
 			.then(result => {
