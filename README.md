@@ -54,7 +54,12 @@ In this project webpack config is extremely simple, as it is not a focus, but wh
 1. clone the repo
 2. `npm start`
 3. In Browser go to `localhost:9000` 
-4. access `/access` page, to add ypur API key. So interaction with API work properly. Invalid API keys will cause error message, be sure to put valid key.
+4. access 'Access' page, to add ypur API key. So interaction with API work properly. Invalid API keys will cause error message, be sure to put valid key.
+
+## Runnign project online
+1. Go to [Site](https://vict-shevchenko.github.io/mb-app) this is a GitHub pages serving an application
+2. Provide yout access key
+3. Test features
 
 ## Test Send SMS
 After server is running
