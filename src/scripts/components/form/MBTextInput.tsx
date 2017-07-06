@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 // Component that is used to render SendSMS form input like Recepient
-export default function MBTextInput({ input, meta, type, placeholder, required}) {
+export function MBTextInput({ input, meta, type, placeholder, required}) {
 
 	const hasError = meta.touched && meta.dirty && !meta.valid;
 

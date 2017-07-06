@@ -5,6 +5,8 @@ import { MessagesStore } from "../../store/MessagesStore";
 import MessagesGrid from './MessagesGrid';
 import MessageGridItem from './MessageGridItem';
 
+import './messages.scss';
+
 interface iProps extends RouteComponentProps<any> {
 	messagesStore: MessagesStore,
 }

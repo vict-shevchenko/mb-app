@@ -38,8 +38,8 @@ In this project webpack config is extremely simple, as it is not a focus, but wh
 1. SCSS is more powerfull than other preprocessors
 2. It allows writing mixins of any complexity
 3. Backward compatible to css
-4. Note: I prefer keeping a `.scss` file in the same folder with a component it matchs, but due to [webpack bug](https://github.com/webpack/webpack/issues/215) and more visibility I have put all styles to a `styles` folder for this project. 
-5. Note 2: writing CSS in JS gives more control over component styling and makes JSX code cleaner(no ternary operators). So in developemnt I`d prefer using solution like [Styles Components](https://github.com/styled-components/styled-components)
+4. SCSS files are kept in same folders as components they are styling, except global css, that is in `style` folder.
+5. Note: writing CSS in JS gives more control over component styling and makes JSX code cleaner(no ternary operators). So in developemnt I`d prefer using solution like [Styles Components](https://github.com/styled-components/styled-components)
 
 
 ## Some Instructions

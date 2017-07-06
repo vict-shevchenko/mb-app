@@ -8,7 +8,7 @@ import MessagesPage from "./pages/messages/Messages"; // Component that displays
 import AuthorisePage from "./pages/auth/Authorise"; // Component to update your API ACCESS_KEY
 import { UserStore } from "./store/UserStore";
 
-require('../styles/main.scss');
+import './app.scss'
 
 // Routing for users who have provided an API key.
 function AuthorisedRouting() {

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import './navigation.scss'
+
 
 // Sidebar navigation items
 export default function Navigation() {

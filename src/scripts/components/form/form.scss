@@ -1,9 +1,5 @@
-
-input, textarea {
-	font-size: 16px;
-	padding: 0 20px 0 10px;
-	outline: none;
-}
+@import "~bourbon/app/assets/stylesheets/_bourbon";
+@import '../../../styles/_variables.scss';
 
 // Form Input Elements
 .mb-form__element {

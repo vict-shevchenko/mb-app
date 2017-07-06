@@ -11,6 +11,8 @@ import App from './scripts/App';
 import { UserStore } from "./scripts/store/UserStore";
 import { MessagesStore } from "./scripts/store/MessagesStore";
 
+import './styles/main.scss';
+
 // creating a stores that should exist in application, if too many of them, this logic can be moved to separate module
 const appStore = {
 	formStore: new FormStore(),

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { reactiveMobxForm, Control } from 'reactive-mobx-form'; 
-import MBTextInput from "../../components/form/MBTextInput";
+import { MBTextInput } from "../../components/form";
+import Button from "../../components/button/Button";
 
 // Component that renders a Send SMS form
 function SendSMSForm({submit}) {
@@ -24,7 +25,7 @@ function SendSMSForm({submit}) {
 			</div>
 			<div className="row">
 				<div className="col-md-4 push-md-8">
-					<button className="btn btn_primary btn_medium full-width">Send SMS</button>
+					<Button>Send SMS</Button>
 				</div>
 			</div>
 		</form>
